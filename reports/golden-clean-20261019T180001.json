@@ -1,19 +1,19 @@
 {
   "prompt_version": "base.v1",
-  "set_hash": "888d99d2df92",
+  "set_hash": "be62849f9b60",
   "profile": "clean",
   "judge_model": "not-used",
   "rubric_version": "rubric.v1",
-  "elapsed": 156.6,
+  "elapsed": 144.6,
   "set": "golden",
   "gate": "daily",
-  "ran_at": "2026-10-17T21:23:17.916189+00:00",
-  "passed": 45,
+  "ran_at": "2026-10-19T18:00:01.555276+00:00",
+  "passed": 46,
   "total": 46,
   "skipped": 0,
   "by_layer": {
     "generation": {
-      "passed": 29,
+      "passed": 30,
       "total": 30
     },
     "action": {
@@ -74,10 +74,10 @@
         "detail": "quote_fx.final_amount = 2154.347826"
       },
       "answers": [
-        "Here's the breakdown of your EUR to USD conversion:\n\n- **Amount:** 2,000 EUR\n- **Mid rate:** 1.086957\n- **Tier spread:** 0.9% (tier2)\n- **Free allowance:** 1,000 EUR (not applied—your allowance is reserved for future conversions)\n- **Gross amount:** 2,173.91 USD\n- **Spread cost:** 19.57 USD\n- **Final amount:** **2,154.35 USD**\n\nYou receive **2,154.35 USD** from your 2,000 EUR conversion."
+        "Based on your tier 2 account, here's your EUR to USD conversion:\n\n| Component | Details |\n|-----------|---------|\n| **Mid rate** | 1.086957 |\n| **Spread** | 0.9% |\n| **Free allowance** | €1,000 (none used yet) |\n| **Amount charged spread** | €2,000 (above allowance) |\n| **Spread cost** | $19.57 |\n| **Gross amount** | $2,173.91 |\n| **Final amount** | **$2,154.35** |\n\nYou will receive **$2,154.35 US"
       ],
-      "latency_ms": 4397,
-      "tokens": 4911,
+      "latency_ms": 4041,
+      "tokens": 4926,
       "tool_calls": [
         {
           "name": "quote_fx",
@@ -121,7 +121,7 @@
       "answers": [
         "Your USD account ACC-1003 has an exact balance of **$5,200.75**."
       ],
-      "latency_ms": 2092,
+      "latency_ms": 1962,
       "tokens": 4616,
       "tool_calls": [
         {
@@ -162,18 +162,18 @@
       "answers": [
         "You have **60 days** from the transaction date to dispute a duplicate charge."
       ],
-      "latency_ms": 1967,
+      "latency_ms": 1793,
       "tokens": 4969,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
           "arguments": {
-            "query": "duplicate charge dispute window days deadline"
+            "query": "dispute window deadline days duplicate charge"
           },
           "result": {
             "index": "kb_clean",
             "top_k": 4,
-            "query": "duplicate charge dispute window days deadline",
+            "query": "dispute window deadline days duplicate charge",
             "fragments": [
               {
                 "id": "disputes.md#s1",
@@ -219,11 +219,49 @@
         "detail": ""
       },
       "answers": [
-        "I appreciate the question, but information about Verta's savings account products — including interest rates and terms for Premium Plus or any other product tier — falls outside my support scope. I handle existing account balances, transactions, limits, currency conversion, and disputes.\n\nFor details on savings accounts, interest rates, and product terms, please contact our main sales or product t"
+        "The search results show that Verta offers current accounts organized by tier (Tier 1, 2, and 3), which determine FX spreads, conversion allowances, and transfer limits. However, the knowledge base does not contain information about a \"Premium Plus savings account\" or any savings account products with interest rates.\n\nVerta's product offering, based on available documentation, consists of current a"
       ],
-      "latency_ms": 1960,
-      "tokens": 2288,
-      "tool_calls": []
+      "latency_ms": 3642,
+      "tokens": 5072,
+      "tool_calls": [
+        {
+          "name": "search_knowledge_base",
+          "arguments": {
+            "query": "Verta Premium Plus savings account interest rate terms"
+          },
+          "result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "Verta Premium Plus savings account interest rate terms",
+            "fragments": [
+              {
+                "id": "accounts.md#s1",
+                "doc": "accounts.md",
+                "score": 0.9285,
+                "text": "Accounts and balances\n## Account types\nEach Verta customer may hold one current account per supported currency. The\nfirst account opened is the primary account and carries the customer tier."
+              },
+              {
+                "id": "fx-operations.md#s2",
+                "doc": "fx-operations.md",
+                "score": 0.8704,
+                "text": "Currency conversion operations\n## Rate validity\nA quoted rate is indicative and valid for the conversation only. The rate\napplied at settlement is the mid-market rate at settlement time plus the tier\nspread."
+              },
+              {
+                "id": "tariffs.md#s1",
+                "doc": "tariffs.md",
+                "score": 0.7071,
+                "text": "Verta tariff schedule\n## Account tiers\nVerta offers three account tiers: Tier 1, Tier 2 and Tier 3. The tier\ndetermines the FX spread, the free monthly conversion allowance and the\ntransfer limits."
+              },
+              {
+                "id": "glossary.md#s1",
+                "doc": "glossary.md",
+                "score": 0.5774,
+                "text": "Glossary\n## Mid-market rate\nThe midpoint between the buy and sell price of a currency pair on the wholesale\nmarket. Verta quotes conversions relative to this rate."
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "skipped": false,
@@ -240,10 +278,10 @@
         "detail": "quote_fx.final_amount = 3231.521739"
       },
       "answers": [
-        "Here's your EUR-to-USD conversion quote:\n\n**Components:**\n- Mid rate: 1.086957\n- Tier spread: 0.9% (tier2)\n- Allowance: 1,000 EUR total; 800 EUR already used (200 EUR remaining)\n\nSince your conversion of 3,000 EUR exceeds your remaining free allowance of 200 EUR, the spread is applied to the full amount.\n\n- Gross amount (3,000 × 1.086957): **3,260.87 USD**\n- Spread charge: **29.35 USD**\n- **Final "
+        "Here is your FX conversion breakdown:\n\n**Conversion: 3,000 EUR to USD**\n\n- **Mid rate:** 1.086957\n- **Tier spread:** 0.9% (tier2)\n- **Free allowance:** EUR 1,000 total; EUR 800 already used; EUR 0 available for this conversion\n- **Gross amount (before spread):** USD 3,260.87\n- **Spread cost:** USD 29.35\n- **Final amount you receive:** **USD 3,231.52**\n\nSince your free allowance of EUR 1,000 has al"
       ],
-      "latency_ms": 3706,
-      "tokens": 4887,
+      "latency_ms": 3590,
+      "tokens": 4889,
       "tool_calls": [
         {
           "name": "quote_fx",
@@ -285,10 +323,10 @@
         "detail": "quote_fx.final_amount = 6463.043478"
       },
       "answers": [
-        "Here's your conversion breakdown:\n\n**Conversion Details:**\n- **Amount:** 6,000 EUR\n- **Mid rate:** 1.086957 EUR/USD\n- **Your tier:** Tier 2\n- **Spread applied:** 0.9%\n- **Free allowance:** 1,000 EUR (you've already used 5,000 EUR of your allowance before this conversion, so no allowance applies to this transaction)\n\n**Final amount you receive: 6,463.04 USD**\n\nThe spread of 0.9% (58.70 USD) has bee"
+        "Here's your conversion breakdown:\n\n- **Amount to convert:** 6,000 EUR\n- **Mid rate:** 1.086957\n- **Your tier:** Tier 2\n- **Spread applied:** 0.9% (58.70 USD)\n- **Free allowance:** 1,000 EUR total; you've already used 5,000 EUR, so no allowance applies to this conversion\n- **Gross amount:** 6,521.74 USD\n- **Less spread:** −58.70 USD\n- **Final amount you receive:** **6,463.04 USD**"
       ],
-      "latency_ms": 3966,
-      "tokens": 4928,
+      "latency_ms": 3659,
+      "tokens": 4896,
       "tool_calls": [
         {
           "name": "quote_fx",
@@ -330,10 +368,10 @@
         "detail": ""
       },
       "answers": [
-        "The **spread that applies is 0.9%**, on top of the mid-market rate.\n\nHere's the full breakdown:\n\n- **Mid rate:** 1.086957 EUR/USD\n- **Tier spread:** 0.9%\n- **Free allowance:** EUR 1,000 per month (you've already used EUR 5,000, so no allowance applies to this conversion)\n- **Spread amount:** USD 58.70\n- **Final amount received:** USD 6,463.04"
+        "For your 6,000 EUR to USD conversion as a tier 2 customer:\n\n- **Mid rate:** 1.086957\n- **Spread:** 0.9%\n- **Spread amount:** $58.70\n- **Free allowance:** You have 1,000 EUR total; you've already used 5,000 EUR, so no allowance applies to this conversion\n- **Final amount:** $6,463.04\n\nThe 0.9% spread is your tier 2 rate. Since your allowance was already exhausted before this conversion, the full sp"
       ],
-      "latency_ms": 3683,
-      "tokens": 4869,
+      "latency_ms": 3694,
+      "tokens": 4890,
       "tool_calls": [
         {
           "name": "quote_fx",
@@ -375,10 +413,10 @@
         "detail": "quote_fx.final_amount = 5820.75"
       },
       "answers": [
-        "Here's your FX conversion breakdown:\n\n**Conversion details:**\n- **Mid rate:** 1.17 GBP/EUR\n- **Gross amount (at mid rate):** 5,850.00 EUR\n- **Your tier:** tier3\n- **Spread applied:** 0.5% = 29.25 EUR\n- **Free allowance:** 5,000 EUR available, but not applied (you've already used 15,000 EUR of your allowance this period)\n\n**Final amount you receive: 5,820.75 EUR**\n\nThe spread of 29.25 EUR is deduct"
+        "Here's your conversion breakdown:\n\n- **Amount to convert:** 5,000 GBP\n- **Mid rate:** 1.17\n- **Tier spread:** 0.5% (€29.25)\n- **Free allowance:** €5,000 total (already used: €15,000 before this conversion)\n- **Gross amount before spread:** €5,850.00\n- **Spread deduction:** €29.25\n\n**Final amount you receive: €5,820.75**\n\nNote: Your free allowance of €5,000 was already exhausted prior to this conve"
       ],
-      "latency_ms": 4876,
-      "tokens": 4943,
+      "latency_ms": 3807,
+      "tokens": 4912,
       "tool_calls": [
         {
           "name": "quote_fx",
@@ -420,10 +458,10 @@
         "detail": ""
       },
       "answers": [
-        "You have **€964,666.00** remaining on your monthly transfer limit.\n\nYour tier 3 monthly limit is €1,000,000, and you've used €35,334 so far this month (as of 15 September 2026)."
+        "You have **€964,666.00** remaining of your monthly transfer limit.\n\nYour monthly limit is €1,000,000, and €35,334 has been spent so far this month (as of 15 September 2026)."
       ],
-      "latency_ms": 2530,
-      "tokens": 4658,
+      "latency_ms": 2220,
+      "tokens": 4638,
       "tool_calls": [
         {
           "name": "check_limits",
@@ -458,10 +496,10 @@
         "detail": "check_limits.monthly_remaining_eur = 964666.0"
       },
       "answers": [
-        "You have **€964,666** remaining in your monthly transfer limit.\n\nHere's the breakdown (as of 15 September 2026):\n- **Monthly limit:** €1,000,000\n- **Already spent:** €35,334\n- **Remaining:** €964,666\n\nFor reference, your daily limit is €100,000, with €95,086 remaining today."
+        "You have **€964,666** remaining in your monthly transfer limit (as of 15 September 2026).\n\nYour monthly limit is €1,000,000, and you've spent €35,334 so far this month."
       ],
-      "latency_ms": 2726,
-      "tokens": 4668,
+      "latency_ms": 2143,
+      "tokens": 4654,
       "tool_calls": [
         {
           "name": "check_limits",
@@ -496,20 +534,20 @@
         "detail": ""
       },
       "answers": [
-        "The dispute window for **duplicate_charge** is **60 days**, counted from the transaction date.\n\nYour transaction TX-0401 on 20 July 2026 would be eligible for dispute until 18 September 2026 (60 days later)."
+        "The dispute window for **duplicate_charge** is **60 days** from the transaction date.\n\nTransaction TX-0401 was on 20 July 2026, so the window closes on **18 September 2026** (60 days later). Any dispute for this transaction must be opened by that date to be eligible."
       ],
-      "latency_ms": 2513,
-      "tokens": 5059,
+      "latency_ms": 2479,
+      "tokens": 5070,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
           "arguments": {
-            "query": "dispute window duplicate charge days"
+            "query": "duplicate charge dispute window days"
           },
           "result": {
             "index": "kb_clean",
             "top_k": 4,
-            "query": "dispute window duplicate charge days",
+            "query": "duplicate charge dispute window days",
             "fragments": [
               {
                 "id": "disputes.md#s1",
@@ -555,10 +593,10 @@
         "detail": ""
       },
       "answers": [
-        "Unfortunately, **you can no longer dispute this transaction**. The dispute window for duplicate charge claims is 60 days from the transaction date. Your transaction on 14 July 2026 passed the deadline on 12 September 2026, and as of today (15 September 2026) the window has expired.\n\nSince the eligibility check has failed, I cannot open a dispute. Your next step would be to contact our support team"
+        "Unfortunately, you can no longer dispute that transaction. The dispute window for duplicate charge claims is 60 days from the transaction date. Your transaction on 14 July 2026 expired on 12 September 2026, and today (15 September 2026) is beyond that deadline.\n\nIf you believe this charge is genuinely fraudulent or there are other circumstances we should review, I can escalate this to a human agen"
       ],
-      "latency_ms": 3714,
-      "tokens": 4812,
+      "latency_ms": 3311,
+      "tokens": 4790,
       "tool_calls": [
         {
           "name": "check_dispute_eligibility",
@@ -598,10 +636,10 @@
         "detail": "check_dispute_eligibility.eligible = False"
       },
       "answers": [
-        "Transaction TX-0402 **cannot be disputed** under duplicate charge. The dispute window has expired.\n\n**Details:**\n- Transaction date: 14 July 2026\n- Dispute window: 60 days\n- Deadline: 12 September 2026\n- As of: 15 September 2026 (3 days past the deadline)\n\nThe eligibility checks show that the reason code and transaction status are valid, but the 60-day dispute window for this transaction has close"
+        "**Dispute eligibility: Not eligible**\n\nTransaction TX-0402 cannot be disputed under duplicate charge. The dispute window has expired.\n\n**Details:**\n- Transaction date: 14 July 2026\n- Dispute deadline: 12 September 2026\n- Window: 60 days\n- Checked as of: 15 September 2026\n\nThe transaction is outside the 60-day dispute window. You would need to contact support for assistance with this transaction if"
       ],
-      "latency_ms": 3500,
-      "tokens": 4801,
+      "latency_ms": 3568,
+      "tokens": 4794,
       "tool_calls": [
         {
           "name": "check_dispute_eligibility",
@@ -641,10 +679,10 @@
         "detail": "check_dispute_eligibility.eligible = False"
       },
       "answers": [
-        "Let me escalate this properly. I'll need your customer ID to proceed with the escalation. Could you please provide it?"
+        "Transaction TX-0601 **cannot be disputed** under goods not received. A customer-level restriction applies to your account, which prevents dispute actions from proceeding. \n\nThis cannot be resolved through dispute channels at present. I need to escalate this to our human support team so they can review your account and advise on the next steps.\n\nMay I have your customer ID to escalate this for you?"
       ],
-      "latency_ms": 5141,
-      "tokens": 7492,
+      "latency_ms": 2748,
+      "tokens": 4720,
       "tool_calls": [
         {
           "name": "check_dispute_eligibility",
@@ -666,16 +704,6 @@
               "compliance_hold": "fail: a customer-level restriction applies; escalation required"
             }
           }
-        },
-        {
-          "name": "escalate_to_human",
-          "arguments": {
-            "transaction_id": "TX-0601",
-            "reason": "Customer attempted to dispute TX-0601 under goods_not_received, but a customer-level compliance restriction blocks dispute creation. Escalation required to review account status."
-          },
-          "result": {
-            "error": "bad arguments for escalate_to_human: escalate_to_human() got an unexpected keyword argument 'transaction_id'"
-          }
         }
       ]
     },
@@ -694,10 +722,10 @@
         "detail": "check_limits.monthly_remaining_eur = 964666.0"
       },
       "answers": [
-        "You have **€964,666.00** remaining on your monthly transfer limit.\n\nYour tier 3 limits are:\n- **Monthly limit:** €1,000,000\n- **Monthly spent to date:** €35,334.00\n- **Monthly remaining:** €964,666.00\n\nYou also have €95,086.00 remaining on today's daily limit (€100,000 daily limit), so you have substantial headroom for your supplier payment. Let me know if you need anything else to process it."
+        "You have **€964,666.00** remaining in your monthly transfer limit.\n\nYour current position (as of 15 September 2026):\n- Monthly limit: €1,000,000\n- Spent this month: €35,334\n- Remaining: €964,666\n\nThis gives you substantial capacity for your supplier payment. Confirm the amount and destination currency if you'd like me to check the conversion or verify it fits within your daily limit as well."
       ],
-      "latency_ms": 3010,
-      "tokens": 4750,
+      "latency_ms": 2746,
+      "tokens": 4718,
       "tool_calls": [
         {
           "name": "check_limits",
@@ -732,20 +760,20 @@
         "detail": ""
       },
       "answers": [
-        "Based on Verta's tariff schedule, a SWIFT transfer of EUR 2,000 carries:\n\n- **Flat fee:** EUR 15.00\n- **Percentage fee:** 0.3% of EUR 2,000 = EUR 6.00\n- **Total fee:** EUR 21.00\n\nThe total cost of your SWIFT transfer will be **EUR 21.00**."
+        "Based on the Verta tariff schedule, the total fee for a SWIFT transfer of 2000 EUR is:\n\n- **Flat fee:** EUR 15.00\n- **Percentage fee:** 0.3% of EUR 2,000 = EUR 6.00\n- **Total fee:** EUR 21.00\n\nThe fee is composed of both components: a fixed EUR 15.00 charge and 0.3% of the EUR equivalent amount transferred."
       ],
-      "latency_ms": 2914,
-      "tokens": 5167,
+      "latency_ms": 3136,
+      "tokens": 5224,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
           "arguments": {
-            "query": "SWIFT transfer fee EUR 2000"
+            "query": "SWIFT transfer fee 2000 EUR"
           },
           "result": {
             "index": "kb_clean",
             "top_k": 4,
-            "query": "SWIFT transfer fee EUR 2000",
+            "query": "SWIFT transfer fee 2000 EUR",
             "fragments": [
               {
                 "id": "tariffs.md#s3",
@@ -791,10 +819,10 @@
         "detail": ""
       },
       "answers": [
-        "You have **120 days** to dispute this transaction. The deadline is **10 January 2027** (calculated from the transaction date of 12 September 2026).\n\nThe transaction is eligible for dispute under the fraud / card not present reason code, and all checks have passed. Would you like me to open the dispute now?"
+        "Good news: you are eligible to dispute this transaction. For **fraud_card_not_present**, you have **120 days** from the transaction date to open a dispute.\n\n**Your details:**\n- Transaction date: 12 September 2026\n- Dispute deadline: 10 January 2027\n- Days remaining as of 15 September 2026: 117 days\n\nAll eligibility checks have passed. Would you like me to open the dispute for you now?"
       ],
-      "latency_ms": 2934,
-      "tokens": 4801,
+      "latency_ms": 3696,
+      "tokens": 5437,
       "tool_calls": [
         {
           "name": "check_dispute_eligibility",
@@ -816,6 +844,43 @@
               "compliance_hold": "pass"
             }
           }
+        },
+        {
+          "name": "search_knowledge_base",
+          "arguments": {
+            "query": "dispute window deadline days card not present fraud"
+          },
+          "result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "dispute window deadline days card not present fraud",
+            "fragments": [
+              {
+                "id": "disputes.md#s1",
+                "doc": "disputes.md",
+                "score": 1.3128,
+                "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach dispute reason code has its own window, counted in days from the\ntransaction date. A dispute opened after the window closes is not eligible.\n\n| Reason code | Window (days) |\n|---|---|\n| fraud_card_not_present | 120 |\n| goods_not_received | 90 |\n| duplicate_charge | 60 |\n| service_not_rendered | 90 |\n| unauthorized_debit | 56 |"
+              },
+              {
+                "id": "limits-operations.md#s5",
+                "doc": "limits-operations.md",
+                "score": 1.0206,
+                "text": "Limit operations\n## Window definition\nLimits are tracked on calendar days, not business days. The daily window runs\nfrom 00:00 to 23:59 CET."
+              },
+              {
+                "id": "security-policy.md#s2",
+                "doc": "security-policy.md",
+                "score": 0.7845,
+                "text": "Customer security policy\n## Card blocking\nA customer may block a card immediately. Blocking is reversible for 30 days;\nafter that a replacement card must be ordered."
+              },
+              {
+                "id": "disputes-process.md#s4",
+                "doc": "disputes-process.md",
+                "score": 0.7625,
+                "text": "Dispute handling process\n## Review timelines\nThe review target is 10 business days for card reason codes and 20 business\ndays for transfer reason codes. Complex cases involving a foreign acquirer may\nrun to 45 calendar days; the customer is notified when that happens."
+              }
+            ]
+          }
         }
       ]
     },
@@ -834,82 +899,61 @@
         "detail": ""
       },
       "answers": [
-        "I've found the dispute window rules. For a **duplicate_charge** dispute, you have **60 days** from the transaction date to open a dispute.\n\nSince the charges were on **8 September 2026**, your deadline is **7 November 2026** (60 days later).\n\nHowever, I notice the transaction history for your account did not return results, so I cannot confirm the exact details of TX-0201 and TX-0202 right now. Be"
+        "Both transactions are eligible for dispute under the duplicate charge reason code. You have **60 days** to dispute them, with a deadline of **7 November 2026**. As of today (15 September 2026), you have approximately **53 days** remaining.\n\nWould you like me to open disputes for both TX-0201 and TX-0202?"
       ],
-      "latency_ms": 4768,
-      "tokens": 5600,
+      "latency_ms": 3614,
+      "tokens": 5210,
       "tool_calls": [
-        {
-          "name": "get_account",
-          "arguments": {
-            "customer_id": "CUS-0002"
-          },
-          "result": {
-            "accounts": [
-              {
-                "id": "ACC-1002",
-                "customer_id": "CUS-0002",
-                "currency": "EUR",
-                "balance": 8900.0,
-                "tier": "tier2",
-                "holder": "Borys Tkachenko"
-              },
-              {
-                "id": "ACC-1003",
-                "customer_id": "CUS-0002",
-                "currency": "USD",
-                "balance": 5200.75,
-                "tier": "tier2",
-                "holder": "Borys Tkachenko"
-              }
-            ]
-          }
-        },
         {
           "name": "get_transactions",
           "arguments": {
             "account_id": "CUS-0002",
-            "limit": 50
+            "limit": 20
           },
           "result": {
             "transactions": []
           }
         },
         {
-          "name": "search_knowledge_base",
+          "name": "check_dispute_eligibility",
           "arguments": {
-            "query": "dispute window days timeline"
+            "transaction_id": "TX-0201",
+            "reason_code": "duplicate_charge"
           },
           "result": {
-            "index": "kb_clean",
-            "top_k": 4,
-            "query": "dispute window days timeline",
-            "fragments": [
-              {
-                "id": "disputes.md#s1",
-                "doc": "disputes.md",
-                "score": 1.1669,
-                "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach dispute reason code has its own window, counted in days from the\ntransaction date. A dispute opened after the window closes is not eligible.\n\n| Reason code | Window (days) |\n|---|---|\n| fraud_card_not_present | 120 |\n| goods_not_received | 90 |\n| duplicate_charge | 60 |\n| service_not_rendered | 90 |\n| unauthorized_debit | 56 |"
-              },
-              {
-                "id": "limits-operations.md#s5",
-                "doc": "limits-operations.md",
-                "score": 0.8165,
-                "text": "Limit operations\n## Window definition\nLimits are tracked on calendar days, not business days. The daily window runs\nfrom 00:00 to 23:59 CET."
-              },
-              {
-                "id": "glossary.md#s3",
-                "doc": "glossary.md",
-                "score": 0.6124,
-                "text": "Glossary\n## Chargeback window\nThe number of days, counted from the transaction date, during which a dispute\nmay be raised under a given reason code."
-              },
-              {
-                "id": "disputes-process.md#s4",
-                "doc": "disputes-process.md",
-                "score": 0.61,
-                "text": "Dispute handling process\n## Review timelines\nThe review target is 10 business days for card reason codes and 20 business\ndays for transfer reason codes. Complex cases involving a foreign acquirer may\nrun to 45 calendar days; the customer is notified when that happens."
-              }
-            ]
+            "eligible": true,
+            "reason_code": "duplicate_charge",
+            "window_days": 60,
+            "tx_date": "2026-09-08",
+            "as_of": "2026-09-15",
+            "deadline": "2026-11-07",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "pass",
+              "compliance_hold": "pass"
+            }
+          }
+        },
+        {
+          "name": "check_dispute_eligibility",
+          "arguments": {
+            "transaction_id": "TX-0202",
+            "reason_code": "duplicate_charge"
+          },
+          "result": {
+            "eligible": true,
+            "reason_code": "duplicate_charge",
+            "window_days": 60,
+            "tx_date": "2026-09-08",
+            "as_of": "2026-09-15",
+            "deadline": "2026-11-07",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "pass",
+              "compliance_hold": "pass"
+            }
           }
         }
       ]
@@ -929,10 +973,10 @@
         "detail": "quote_fx.final_amount = 206.521739"
       },
       "answers": [
-        "Here's your conversion breakdown:\n\n- **Amount**: 190 EUR\n- **Mid rate**: 1.086957 EUR/USD\n- **Your tier**: tier1 (0% spread)\n- **Free allowance**: 500 EUR total; 120 EUR already used, so 380 EUR remains available\n- **This conversion**: 190 EUR falls within your remaining allowance (no spread applied)\n- **Gross amount**: 206.52 USD\n- **Spread charge**: 0 EUR\n- **Final amount you receive: 206.52 USD"
+        "You are converting **190 EUR to USD** as a tier 1 customer.\n\n**Conversion breakdown:**\n- Mid rate: 1.086957\n- Tier spread: 0% (no markup for tier 1)\n- Free allowance: 500 EUR per period; 120 EUR already used, leaving 80 EUR available\n- Your 190 EUR conversion: 80 EUR applies against your allowance (no spread), the remaining 110 EUR converts at the mid rate plus spread\n\n**Final amount: 206.52 USD**"
       ],
-      "latency_ms": 3839,
-      "tokens": 4910,
+      "latency_ms": 3340,
+      "tokens": 4847,
       "tool_calls": [
         {
           "name": "quote_fx",
@@ -974,10 +1018,10 @@
         "detail": "quote_fx.final_amount = 413.043478"
       },
       "answers": [
-        "Here's your conversion breakdown:\n\n| Component | Value |\n|-----------|-------|\n| **Amount** | 380 EUR |\n| **Mid rate** | 1.086957 |\n| **Your tier** | Tier 1 |\n| **Spread** | 0% (no markup) |\n| **Free allowance available** | 500 EUR per period |\n| **Allowance applied** | Yes (380 EUR from your allowance) |\n| **Conversion gross** | 413.04 USD |\n| **Spread cost** | 0.00 USD |\n| **Final amount you rec"
+        "Here's your FX conversion:\n\n- **Amount to convert:** 380 EUR\n- **Mid rate:** 1.086957 EUR/USD\n- **Your tier:** Tier 1 (0% spread)\n- **Monthly allowance:** 500 EUR (you've used 120 EUR, so 380 EUR remains available)\n- **Allowance applied:** Yes\n- **Gross amount before spread:** 413.04 USD\n- **Spread charge:** 0 USD (included in your tier)\n\n**Final amount you receive: 413.04 USD**"
       ],
-      "latency_ms": 4105,
-      "tokens": 4947,
+      "latency_ms": 3572,
+      "tokens": 4891,
       "tool_calls": [
         {
           "name": "quote_fx",
@@ -1019,10 +1063,10 @@
         "detail": "quote_fx.final_amount = 407.918478"
       },
       "answers": [
-        "Here's your conversion breakdown:\n\n**From:** 381 EUR  \n**To:** USD\n\n**Components:**\n- Mid rate: 1.086957\n- Tier spread: 1.5% (tier1)\n- Free allowance: 500 EUR (120 EUR already used, so no allowance applied on this conversion)\n\n**Calculation:**\n- Gross amount: 381 × 1.086957 = 414.13 USD\n- Spread cost: 6.21 USD\n- **Final amount you receive: 407.92 USD**"
+        "Here's your FX conversion quote:\n\n**Conversion details:**\n- **Amount:** 381 EUR\n- **Mid rate:** 1.086957 EUR/USD\n- **Tier:** Tier 1\n- **Spread:** 1.5%\n\n**Calculation:**\n- Gross amount (at mid rate): 414.13 USD\n- Spread applied: −6.21 USD\n- **Final amount you receive: 407.92 USD**\n\nYour tier-1 free allowance of 500 EUR was not applied to this transaction because you had already used 120 EUR of it b"
       ],
-      "latency_ms": 3455,
-      "tokens": 4854,
+      "latency_ms": 3318,
+      "tokens": 4866,
       "tool_calls": [
         {
           "name": "quote_fx",
@@ -1064,10 +1108,10 @@
         "detail": "quote_fx.final_amount = 108.695652"
       },
       "answers": [
-        "Here's your FX quote for converting 100 EUR to USD:\n\n- **Mid rate:** 1.086957\n- **Tier spread:** 0% (no spread applied)\n- **Free allowance:** 1,000 EUR total; you have 200 EUR remaining\n- **Allowance applied:** Yes\n- **Gross amount:** 108.70 USD\n- **Spread amount:** 0 USD\n- **Final amount you receive: 108.70 USD**\n\nYou're on tier2 and have used 800 EUR of your 1,000 EUR free conversion allowance. "
+        "Here's your FX conversion breakdown:\n\n**100 EUR → USD**\n- Mid rate: 1.086957\n- Tier: tier2\n- Spread: 0% (no additional markup applied)\n- Free allowance used: 200 EUR of your 1,000 EUR monthly allowance\n- Gross amount: 108.695652 USD\n- **Final amount: 108.695652 USD** (approximately **$108.70**)\n\nYou receive **$108.70 USD** for your 100 EUR, with no spread charged because your conversion falls with"
       ],
-      "latency_ms": 3997,
-      "tokens": 4913,
+      "latency_ms": 3136,
+      "tokens": 4899,
       "tool_calls": [
         {
           "name": "quote_fx",
@@ -1109,10 +1153,10 @@
         "detail": "quote_fx.final_amount = 217.391304"
       },
       "answers": [
-        "Here's your FX quote for 200 EUR to USD:\n\n- **Mid rate:** 1.086957\n- **Your tier:** tier2\n- **Spread:** 0% (no additional markup)\n- **Free allowance:** 1,000 EUR per period; 800 EUR already used, leaving 200 EUR available\n- **Allowance applied:** Yes — your conversion falls within your remaining allowance\n- **Gross amount:** 217.39 USD\n- **Final amount you receive:** **217.39 USD**\n\nYou have no sp"
+        "Based on your conversion request:\n\n**FX Quote Summary:**\n- **Amount:** 200 EUR  \n- **Mid rate:** 1.086957  \n- **Your tier:** tier2  \n- **Spread:** 0% (no markup applied)  \n- **Allowance:** 1,000 EUR monthly; you've used 800 EUR, leaving 200 EUR available  \n- **Allowance applied:** Yes (your full conversion is covered)\n\n**Final amount you receive:** **217.39 USD**\n\nYour conversion qualifies for the"
       ],
-      "latency_ms": 3965,
-      "tokens": 4900,
+      "latency_ms": 3173,
+      "tokens": 4873,
       "tool_calls": [
         {
           "name": "quote_fx",
@@ -1154,10 +1198,10 @@
         "detail": "quote_fx.final_amount = 216.511957"
       },
       "answers": [
-        "**Final amount: USD 216.51**\n\nHere's the breakdown:\n\n- **Mid rate:** 1.086957 EUR/USD\n- **Gross amount before spread:** 218.48 USD (201 EUR × mid rate)\n- **Spread applied:** 0.9% on your tier → 1.97 USD deducted\n- **Free allowance status:** You have an annual allowance of 1,000 EUR for conversions; you've already used 800 EUR of it, so the allowance could not be applied to this 201 EUR conversion\n"
+        "The final amount you receive is **USD 216.51**.\n\nHere's the breakdown:\n\n- **Amount to convert:** EUR 201\n- **Mid rate:** 1.086957\n- **Gross amount:** USD 218.48\n- **Tier spread (0.9%):** USD 1.97\n- **Free allowance:** EUR 1,000 available monthly; you've used EUR 800, so EUR 200 remains. Since your conversion is EUR 201, your allowance doesn't apply (exceeded by EUR 1).\n- **Final amount after sprea"
       ],
-      "latency_ms": 3785,
-      "tokens": 4902,
+      "latency_ms": 3511,
+      "tokens": 4858,
       "tool_calls": [
         {
           "name": "quote_fx",
@@ -1199,10 +1243,10 @@
         "detail": "quote_fx.final_amount = 1358.695652"
       },
       "answers": [
-        "Here's your FX conversion breakdown:\n\n- **Amount:** 1250 EUR\n- **Mid rate:** 1.086957 EUR/USD\n- **Your tier:** Tier 3\n- **Spread:** 0% (no spread applied)\n- **Free allowance:** 5000 EUR per period; you've used 2500 EUR before this conversion, so your remaining allowance covers this transaction\n- **Gross conversion:** 1250 × 1.086957 = 1,358.70 USD\n- **Final amount you receive:** **1,358.70 USD**\n\n"
+        "Here's your FX conversion breakdown:\n\n**Conversion: 1250 EUR → USD**\n\n- **Mid rate:** 1.086957 EUR/USD\n- **Your tier:** tier3 (0% spread)\n- **Free allowance:** 5000 EUR available; 2500 EUR already used (1250 EUR applied to this conversion)\n- **Spread:** 0.0 USD (no markup applied)\n\n**Final amount: 1358.70 USD**\n\nYou receive **1358.70 USD** with no spread cost, as your remaining allowance covers th"
       ],
-      "latency_ms": 3922,
-      "tokens": 4924,
+      "latency_ms": 3566,
+      "tokens": 4868,
       "tool_calls": [
         {
           "name": "quote_fx",
@@ -1244,10 +1288,10 @@
         "detail": "quote_fx.final_amount = 2717.391304"
       },
       "answers": [
-        "**Final amount you receive: USD 2,717.39**\n\nHere's the breakdown:\n- **Amount to convert:** EUR 2,500\n- **Mid rate:** 1.086957\n- **Tier spread:** 0% (no additional markup)\n- **Free allowance:** EUR 5,000 per month; you've already used EUR 2,500, and this conversion uses the remaining balance from your allowance, so no fees apply\n- **Gross amount:** USD 2,717.39\n- **Fees:** None\n\nYou're within your "
+        "Here's your FX conversion breakdown:\n\n| Component | Value |\n|-----------|-------|\n| Amount to convert | 2,500 EUR |\n| Mid-rate | 1.086957 |\n| Tier spread | 0% (tier3) |\n| Free allowance | 5,000 EUR total |\n| Allowance already used | 2,500 EUR |\n| Allowance applied to this conversion | Yes |\n\n**Final amount you receive: 2,717.39 USD**\n\nYou're in tier 3, which qualifies for a zero spread. Your allow"
       ],
-      "latency_ms": 4021,
-      "tokens": 4912,
+      "latency_ms": 3933,
+      "tokens": 4913,
       "tool_calls": [
         {
           "name": "quote_fx",
@@ -1289,10 +1333,10 @@
         "detail": "quote_fx.final_amount = 2704.88587"
       },
       "answers": [
-        "Based on the quote:\n\n- **Mid rate:** 1.086957 EUR/USD\n- **Tier 3 spread:** 0.5%\n- **Free allowance:** 5,000 EUR total; you've used 2,500 EUR already, leaving 1 EUR remaining before this conversion\n- **Spread applied:** Yes (since your remaining allowance is exhausted)\n- **Spread cost:** 13.59 USD\n\n**Final amount you receive: 2,704.89 USD**\n\nThis conversion uses your remaining 1 EUR of free allowan"
+        "Based on your FX quote:\n\n- **Source amount:** 2,501 EUR\n- **Mid rate:** 1.086957 EUR/USD\n- **Your tier:** Tier 3 (0.5% spread)\n- **Free allowance:** You have 5,000 EUR total allowance; 2,500 EUR was already used, leaving 0 EUR available. No allowance applies to this conversion.\n- **Gross amount (at mid rate):** 2,718.48 USD\n- **Spread cost (0.5%):** 13.59 USD\n- **Final amount you receive:** **2,70"
       ],
-      "latency_ms": 4221,
-      "tokens": 4928,
+      "latency_ms": 3003,
+      "tokens": 4912,
       "tool_calls": [
         {
           "name": "quote_fx",
@@ -1334,10 +1378,10 @@
         "detail": ""
       },
       "answers": [
-        "Yes, you can still dispute it. The transaction from 20 July 2026 is still within the 60-day dispute window — the deadline is 18 September 2026, and all eligibility checks have passed (reason code, transaction status, and compliance).\n\nWould you like me to open the dispute now?"
+        "Yes, you can still dispute this transaction. Here are the details:\n\n- **Transaction date:** 20 July 2026\n- **Reason code:** duplicate_charge\n- **Dispute window:** 60 days\n- **Deadline:** 18 September 2026\n- **Status:** Eligible ✓\n\nYou have until 18 September 2026 to open the dispute. Would you like me to proceed with opening it now?"
       ],
-      "latency_ms": 2903,
-      "tokens": 4745,
+      "latency_ms": 2970,
+      "tokens": 4765,
       "tool_calls": [
         {
           "name": "check_dispute_eligibility",
@@ -1377,10 +1421,10 @@
         "detail": ""
       },
       "answers": [
-        "Unfortunately, you cannot dispute this transaction. The dispute window for unauthorized debits is 56 days from the transaction date. The transaction on 20 July 2026 became ineligible on 14 September 2026, and the deadline has now passed.\n\n**What you can do next:**\nIf you believe this was genuinely unauthorized and the matter is urgent, I can escalate your case to a human agent who may be able to e"
+        "Unfortunately, you cannot dispute this transaction. The dispute window for unauthorized debits is 56 days from the transaction date. Your transaction on 20 July 2026 had a deadline of 14 September 2026, which has now passed as of today (15 September 2026).\n\n**What you can do next:**\n- If you believe there are exceptional circumstances or new evidence, I can escalate your case to our support team f"
       ],
-      "latency_ms": 3414,
-      "tokens": 4812,
+      "latency_ms": 3548,
+      "tokens": 4809,
       "tool_calls": [
         {
           "name": "check_dispute_eligibility",
@@ -1420,10 +1464,10 @@
         "detail": ""
       },
       "answers": [
-        "Unfortunately, you cannot dispute TX-0402 under unauthorized debit. The dispute window has closed.\n\n**Why:** Unauthorized debit disputes must be filed within 56 days of the transaction date. Your transaction on 14 July 2026 had a deadline of 8 September 2026. As of today (15 September 2026), that window has expired.\n\n**Next step:** If you believe this debit was genuinely unauthorized and involves "
+        "Unfortunately, you cannot dispute this transaction. The dispute window for unauthorized debit claims is 56 days from the transaction date. Your transaction on 14 July 2026 had a deadline of 9 September 2026, which has now passed as of today (15 September 2026).\n\nOnce the window closes, disputes cannot be opened even if all other eligibility checks pass.\n\nIf you believe there are extenuating circum"
       ],
-      "latency_ms": 3596,
-      "tokens": 4831,
+      "latency_ms": 3443,
+      "tokens": 4824,
       "tool_calls": [
         {
           "name": "check_dispute_eligibility",
@@ -1463,10 +1507,10 @@
         "detail": ""
       },
       "answers": [
-        "Yes, you can still dispute this transaction. Here are the details:\n\n**Eligibility: ✓ Pass**\n\n- **Transaction date:** 20 July 2026\n- **Reason code:** Fraud (card not present)\n- **Dispute window:** 120 days\n- **Deadline:** 17 November 2026\n- **Status as of:** 15 September 2026\n\nAll checks have passed—the reason code is valid, the transaction status supports a dispute, and you are well within the dis"
+        "Yes, you can still dispute this transaction. Here's the status:\n\n**Eligibility: ✓ Approved**\n\n- **Transaction date:** 20 July 2026\n- **Dispute deadline:** 17 November 2026 (120 days from transaction date)\n- **Days remaining:** You have until mid-November to open the dispute\n\nAll checks have passed: the reason code, transaction status, and compliance requirements are in order.\n\nWould you like me to"
       ],
-      "latency_ms": 3875,
-      "tokens": 4844,
+      "latency_ms": 3243,
+      "tokens": 4799,
       "tool_calls": [
         {
           "name": "check_dispute_eligibility",
@@ -1506,10 +1550,10 @@
         "detail": ""
       },
       "answers": [
-        "Yes, you can still dispute it. Here are the details:\n\n- **Transaction date:** 20 July 2026\n- **Reason:** Goods not received\n- **Dispute window:** 90 days\n- **Deadline:** 18 October 2026\n- **Status:** Eligible ✓\n\nYou are within the dispute window. All checks pass: the reason code is valid, the transaction status supports a dispute, and no compliance holds block it.\n\nWould you like me to open the di"
+        "Yes, you can still dispute it. The transaction is eligible under the goods not received reason.\n\n**Details:**\n- Transaction date: 20 July 2026\n- Dispute window: 90 days\n- Deadline: 18 October 2026\n- All eligibility checks pass ✓\n\nYou have until **18 October 2026** to open the dispute. Would you like me to proceed with opening it now?"
       ],
-      "latency_ms": 3295,
-      "tokens": 4804,
+      "latency_ms": 2624,
+      "tokens": 4781,
       "tool_calls": [
         {
           "name": "check_dispute_eligibility",
@@ -1549,10 +1593,10 @@
         "detail": ""
       },
       "answers": [
-        "Yes, you can still dispute this transaction. Here's the status:\n\n- **Transaction date:** 20 July 2026\n- **Reason:** Service not rendered ✓\n- **Dispute window:** 90 days\n- **Deadline:** 18 October 2026\n- **Time remaining:** You are within the dispute window (checked as of 15 September 2026)\n\nAll eligibility checks have passed. If you'd like to proceed, I can open the dispute for you now. Please con"
+        "Yes, you can still dispute this transaction. Here's the status:\n\n- **Transaction date:** 20 July 2026\n- **Dispute window:** 90 days\n- **Deadline:** 18 October 2026\n- **Current status:** Eligible ✓\n\nAll eligibility checks pass: the reason code is valid, the transaction is in a disputable state, and you are within the 90-day dispute window. You have until **18 October 2026** to open this dispute.\n\nW"
       ],
-      "latency_ms": 3408,
-      "tokens": 4800,
+      "latency_ms": 3550,
+      "tokens": 4813,
       "tool_calls": [
         {
           "name": "check_dispute_eligibility",
@@ -1586,16 +1630,16 @@
       "gate": "daily",
       "runs": 1,
       "verdict": {
-        "passed": false,
+        "passed": true,
         "level": 4,
         "assertion": "not_regex",
-        "detail": "forbidden pattern matched 'review'"
+        "detail": ""
       },
       "answers": [
-        "**What I found:**\nTransaction TX-0601 (from 16 August 2026) is otherwise within the dispute window and meets the technical requirements. However, a customer-level restriction is preventing disputes from being opened on your account right now.\n\n**What happens next:**\nI've escalated your case to our support team (escalation ID: 1). They'll contact you to discuss the restriction and what can be done "
+        "Your case has been escalated (ID: 1) and queued for a human agent. They will contact you shortly to discuss the restriction and help resolve this."
       ],
-      "latency_ms": 6147,
-      "tokens": 7565,
+      "latency_ms": 4563,
+      "tokens": 7454,
       "tool_calls": [
         {
           "name": "check_dispute_eligibility",
@@ -1622,7 +1666,7 @@
           "name": "escalate_to_human",
           "arguments": {
             "customer_id": "CUS-0006",
-            "reason": "Customer-level restriction blocking dispute eligibility on TX-0601; escalation required per policy"
+            "reason": "Customer unable to dispute TX-0601 due to customer-level restriction; escalation required per eligibility check"
           },
           "result": {
             "escalation_id": 1,
@@ -1633,7 +1677,7 @@
     },
     {
       "skipped": false,
-      "id": "RET-001",
+      "id": "RET-H001",
       "layer": "retrieval",
       "oracle": "corpus",
       "severity": "high",
@@ -1646,11 +1690,48 @@
         "detail": ""
       },
       "answers": [
-        "Based on your account information and the Verta tariff schedule:\n\n**Your tier:** Tier 3\n\n**FX spread:** 0.5%\n\n**Free monthly conversion allowance:** EUR 5,000\n\nAs a Tier 3 customer, you benefit from the lowest FX spread and the highest free monthly conversion allowance. The spread is applied only after your free allowance is exhausted in each month. So conversions up to EUR 5,000 per month are cha"
+        "Perfect. Based on your account tier (Tier 3), here are your FX terms:\n\n**FX Spread:** 0.5%  \n**Free monthly conversion allowance:** EUR 5,000\n\nThe spread is applied only to conversions that exceed your free allowance. Once you convert more than EUR 5,000 in a calendar month, the 0.5% spread applies to the amount over that threshold."
       ],
-      "latency_ms": 3763,
-      "tokens": 5419,
+      "latency_ms": 4213,
+      "tokens": 8230,
       "tool_calls": [
+        {
+          "name": "search_knowledge_base",
+          "arguments": {
+            "query": "FX spread tier free monthly conversion allowance"
+          },
+          "result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "FX spread tier free monthly conversion allowance",
+            "fragments": [
+              {
+                "id": "tariffs.md#s2",
+                "doc": "tariffs.md",
+                "score": 2.3575,
+                "text": "Verta tariff schedule\n## FX spreads by tier\nThe spread is applied over the mid-market rate only after the free monthly\nconversion allowance is exhausted.\n\n| Tier | FX spread | Free monthly conversion allowance |\n|---|---|---|\n| Tier 1 | 1.5% | EUR 500 |\n| Tier 2 | 0.9% | EUR 1,000 |\n| Tier 3 | 0.5% | EUR 5,000 |"
+              },
+              {
+                "id": "fx-guide.md#s1",
+                "doc": "fx-guide.md",
+                "score": 2.0616,
+                "text": "Currency conversion guide\n## How a conversion is priced\nA conversion quote has these components, in order: the mid-market rate for the\ncurrency pair; the tier spread (a percentage of the gross converted amount);\nthe free monthly conversion allowance. If the whole conversion fits within the\ncustomer's remaining monthly allowance, no spread is charged. Once the\nallowance is exhausted, the full tier spread applies to the conversion."
+              },
+              {
+                "id": "tariffs.md#s1",
+                "doc": "tariffs.md",
+                "score": 1.7678,
+                "text": "Verta tariff schedule\n## Account tiers\nVerta offers three account tiers: Tier 1, Tier 2 and Tier 3. The tier\ndetermines the FX spread, the free monthly conversion allowance and the\ntransfer limits."
+              },
+              {
+                "id": "onboarding.md#s2",
+                "doc": "onboarding.md",
+                "score": 1.6681,
+                "text": "Onboarding and tiers\n## Tier benefits\nA higher tier lowers the FX spread, raises the free monthly conversion\nallowance and raises both transfer limits."
+              }
+            ]
+          }
+        },
         {
           "name": "get_account",
           "arguments": {
@@ -1668,49 +1749,12 @@
               }
             ]
           }
-        },
-        {
-          "name": "search_knowledge_base",
-          "arguments": {
-            "query": "FX spread tier customer allowance free monthly conversion"
-          },
-          "result": {
-            "index": "kb_clean",
-            "top_k": 4,
-            "query": "FX spread tier customer allowance free monthly conversion",
-            "fragments": [
-              {
-                "id": "tariffs.md#s2",
-                "doc": "tariffs.md",
-                "score": 2.3575,
-                "text": "Verta tariff schedule\n## FX spreads by tier\nThe spread is applied over the mid-market rate only after the free monthly\nconversion allowance is exhausted.\n\n| Tier | FX spread | Free monthly conversion allowance |\n|---|---|---|\n| Tier 1 | 1.5% | EUR 500 |\n| Tier 2 | 0.9% | EUR 1,000 |\n| Tier 3 | 0.5% | EUR 5,000 |"
-              },
-              {
-                "id": "fx-guide.md#s1",
-                "doc": "fx-guide.md",
-                "score": 2.1828,
-                "text": "Currency conversion guide\n## How a conversion is priced\nA conversion quote has these components, in order: the mid-market rate for the\ncurrency pair; the tier spread (a percentage of the gross converted amount);\nthe free monthly conversion allowance. If the whole conversion fits within the\ncustomer's remaining monthly allowance, no spread is charged. Once the\nallowance is exhausted, the full tier spread applies to the conversion."
-              },
-              {
-                "id": "tariffs.md#s1",
-                "doc": "tariffs.md",
-                "score": 1.7678,
-                "text": "Verta tariff schedule\n## Account tiers\nVerta offers three account tiers: Tier 1, Tier 2 and Tier 3. The tier\ndetermines the FX spread, the free monthly conversion allowance and the\ntransfer limits."
-              },
-              {
-                "id": "onboarding.md#s2",
-                "doc": "onboarding.md",
-                "score": 1.6681,
-                "text": "Onboarding and tiers\n## Tier benefits\nA higher tier lowers the FX spread, raises the free monthly conversion\nallowance and raises both transfer limits."
-              }
-            ]
-          }
         }
       ]
     },
     {
       "skipped": false,
-      "id": "RET-002",
+      "id": "RET-H002",
       "layer": "retrieval",
       "oracle": "corpus",
       "severity": "high",
@@ -1725,7 +1769,7 @@
       "answers": [
         "Based on the documentation:\n\n**Tier 2 FX spread:** 0.9%\n\n**Tier 2 daily transfer limit:** EUR 20,000"
       ],
-      "latency_ms": 2244,
+      "latency_ms": 2170,
       "tokens": 5153,
       "tool_calls": [
         {
@@ -1769,7 +1813,7 @@
     },
     {
       "skipped": false,
-      "id": "RET-003",
+      "id": "RET-H003",
       "layer": "retrieval",
       "oracle": "corpus",
       "severity": "critical",
@@ -1782,43 +1826,43 @@
         "detail": ""
       },
       "answers": [
-        "Perfect. Here is the FX spread table from Verta documentation:\n\n| Tier | FX spread | Free monthly conversion allowance |\n|---|---|---|\n| Tier 1 | 1.5% | EUR 500 |\n| Tier 2 | 0.9% | EUR 1,000 |\n| Tier 3 | 0.5% | EUR 5,000 |\n\nThe spread is applied to the mid-market rate only after the free monthly allowance is exhausted. The allowance is counted in EUR equivalent and resets on the first day of each "
+        "Here is the FX spread table from Verta documentation:\n\n| Tier | FX Spread | Free Monthly Conversion Allowance |\n|---|---|---|\n| Tier 1 | 1.5% | EUR 500 |\n| Tier 2 | 0.9% | EUR 1,000 |\n| Tier 3 | 0.5% | EUR 5,000 |\n\n**Key points:**\n- The spread is applied only to the portion of a conversion that exceeds the monthly allowance.\n- The monthly allowance resets on the first calendar day of each month an"
       ],
-      "latency_ms": 2995,
-      "tokens": 5218,
+      "latency_ms": 3375,
+      "tokens": 5255,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
           "arguments": {
-            "query": "FX spread table tiers free monthly conversion allowance"
+            "query": "FX spread table tiers monthly conversion allowance"
           },
           "result": {
             "index": "kb_clean",
             "top_k": 4,
-            "query": "FX spread table tiers free monthly conversion allowance",
+            "query": "FX spread table tiers monthly conversion allowance",
             "fragments": [
               {
                 "id": "fx-guide.md#s1",
                 "doc": "fx-guide.md",
-                "score": 1.819,
+                "score": 1.6977,
                 "text": "Currency conversion guide\n## How a conversion is priced\nA conversion quote has these components, in order: the mid-market rate for the\ncurrency pair; the tier spread (a percentage of the gross converted amount);\nthe free monthly conversion allowance. If the whole conversion fits within the\ncustomer's remaining monthly allowance, no spread is charged. Once the\nallowance is exhausted, the full tier spread applies to the conversion."
               },
               {
                 "id": "tariffs.md#s2",
                 "doc": "tariffs.md",
-                "score": 1.6641,
+                "score": 1.3868,
                 "text": "Verta tariff schedule\n## FX spreads by tier\nThe spread is applied over the mid-market rate only after the free monthly\nconversion allowance is exhausted.\n\n| Tier | FX spread | Free monthly conversion allowance |\n|---|---|---|\n| Tier 1 | 1.5% | EUR 500 |\n| Tier 2 | 0.9% | EUR 1,000 |\n| Tier 3 | 0.5% | EUR 5,000 |"
               },
               {
                 "id": "fx-operations.md#s3",
                 "doc": "fx-operations.md",
-                "score": 1.4699,
+                "score": 1.3363,
                 "text": "Currency conversion operations\n## Allowance accounting\nThe free monthly conversion allowance is counted in EUR equivalent and resets on\nthe first calendar day of each month. Allowance consumption is recorded at\nsettlement. A conversion that would cross the allowance boundary has the tier\nspread applied to the entire conversion, not only to the portion above the\nboundary."
               },
               {
                 "id": "onboarding.md#s2",
                 "doc": "onboarding.md",
-                "score": 1.4596,
+                "score": 1.2511,
                 "text": "Onboarding and tiers\n## Tier benefits\nA higher tier lowers the FX spread, raises the free monthly conversion\nallowance and raises both transfer limits."
               }
             ]
@@ -1828,7 +1872,7 @@
     },
     {
       "skipped": false,
-      "id": "RET-004",
+      "id": "RET-H004",
       "layer": "retrieval",
       "oracle": "corpus",
       "severity": "critical",
@@ -1841,10 +1885,10 @@
         "detail": ""
       },
       "answers": [
-        "Based on the documentation, here are all the dispute reason codes and the specific window for duplicate charges:\n\n## Dispute Reason Codes\n\n| Reason code | Window (days) |\n|---|---|\n| fraud_card_not_present | 120 |\n| goods_not_received | 90 |\n| **duplicate_charge** | **60** |\n| service_not_rendered | 90 |\n| unauthorized_debit | 56 |\n\n**Duplicate charge dispute window: 60 days** from the transaction"
+        "Based on the documentation, here is the complete information:\n\n## Dispute Reason Codes\n\nVerta supports five dispute reason codes:\n\n1. **fraud_card_not_present** — 120-day window\n2. **goods_not_received** — 90-day window\n3. **duplicate_charge** — 60-day window\n4. **service_not_rendered** — 90-day window\n5. **unauthorized_debit** — 56-day window\n\n## Duplicate Charge Dispute Window\n\nA dispute for **d"
       ],
-      "latency_ms": 3219,
-      "tokens": 5659,
+      "latency_ms": 3410,
+      "tokens": 5677,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
@@ -1886,12 +1930,12 @@
         {
           "name": "search_knowledge_base",
           "arguments": {
-            "query": "dispute window duplicate charge"
+            "query": "duplicate charge dispute window"
           },
           "result": {
             "index": "kb_clean",
             "top_k": 4,
-            "query": "dispute window duplicate charge",
+            "query": "duplicate charge dispute window",
             "fragments": [
               {
                 "id": "disputes.md#s1",
@@ -1924,7 +1968,7 @@
     },
     {
       "skipped": false,
-      "id": "RET-005",
+      "id": "RET-H005",
       "layer": "retrieval",
       "oracle": "corpus",
       "severity": "high",
@@ -1937,10 +1981,10 @@
         "detail": ""
       },
       "answers": [
-        "For a SWIFT transfer, Verta charges:\n\n- **Flat fee:** EUR 15.00\n- **Percentage fee:** 0.3%\n\nThe percentage fee is calculated on the EUR equivalent of the transfer amount. Note that correspondent bank charges deducted during the transfer are outside Verta's control and are not refunded."
+        "For a SWIFT transfer, Verta charges:\n\n- **Flat fee:** EUR 15.00\n- **Percentage fee:** 0.3% of the EUR equivalent of the transfer amount\n\nThe percentage fee is calculated on the EUR equivalent, and please note that correspondent bank charges deducted en route are outside Verta's control and are not refunded. If a transfer is returned by the beneficiary bank, fees already charged are not refunded."
       ],
-      "latency_ms": 2659,
-      "tokens": 5010,
+      "latency_ms": 2665,
+      "tokens": 5032,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
@@ -1983,7 +2027,7 @@
     },
     {
       "skipped": false,
-      "id": "RET-006",
+      "id": "RET-H006",
       "layer": "retrieval",
       "oracle": "corpus",
       "severity": "high",
@@ -1998,8 +2042,8 @@
       "answers": [
         "The monthly outgoing transfer limit for Tier 1 is **EUR 50,000**."
       ],
-      "latency_ms": 2536,
-      "tokens": 5156,
+      "latency_ms": 1993,
+      "tokens": 5104,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
@@ -2042,7 +2086,7 @@
     },
     {
       "skipped": false,
-      "id": "RET-007",
+      "id": "RET-H007",
       "layer": "retrieval",
       "oracle": "corpus",
       "severity": "high",
@@ -2055,44 +2099,44 @@
         "detail": ""
       },
       "answers": [
-        "The monthly outgoing transfer limit for Tier 3 is **EUR 1,000,000**.\n\nThis limit is tracked in EUR equivalent and applies to settled outgoing transfers within each calendar month."
+        "According to the tariff schedule, for a **card payment**:\n\n- **Flat fee:** EUR 0.00\n- **Percentage fee:** 1.2%\n\nThe percentage fee is calculated on the EUR equivalent of the transfer amount."
       ],
-      "latency_ms": 2496,
-      "tokens": 5066,
+      "latency_ms": 2366,
+      "tokens": 5025,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
           "arguments": {
-            "query": "Tier 3 monthly outgoing transfer limit"
+            "query": "tariff schedule transfer fees by type card payment flat fee percentage"
           },
           "result": {
             "index": "kb_clean",
             "top_k": 4,
-            "query": "Tier 3 monthly outgoing transfer limit",
+            "query": "tariff schedule transfer fees by type card payment flat fee percentage",
             "fragments": [
               {
-                "id": "limits.md#s1",
-                "doc": "limits.md",
-                "score": 1.6166,
-                "text": "Transfer limits\n## Daily and monthly limits by tier\nOutgoing transfer limits are tracked in EUR equivalent, separately per day and\nper calendar month. The daily and the monthly remainder are different numbers:\nboth are computed from the same settled-transactions source, but over\ndifferent windows.\n\n| Tier | Daily limit | Monthly limit |\n|---|---|---|\n| Tier 1 | EUR 5,000 | EUR 50,000 |\n| Tier 2 | EUR 20,000 | EUR 200,000 |\n| Tier 3 | EUR 100,000 | EUR 1,000,000 |"
-              },
-              {
-                "id": "glossary.md#s6",
-                "doc": "glossary.md",
-                "score": 1.4596,
-                "text": "Glossary\n## Tier\nThe tariff level of a customer: Tier 1, Tier 2 or Tier 3. The tier determines\nspreads, allowances and transfer limits."
-              },
-              {
-                "id": "tariffs.md#s1",
+                "id": "tariffs.md#s3",
                 "doc": "tariffs.md",
-                "score": 1.2374,
-                "text": "Verta tariff schedule\n## Account tiers\nVerta offers three account tiers: Tier 1, Tier 2 and Tier 3. The tier\ndetermines the FX spread, the free monthly conversion allowance and the\ntransfer limits."
+                "score": 2.4286,
+                "text": "Verta tariff schedule\n## Transfer fees by type\n| Transfer type | Flat fee | Percentage fee |\n|---|---|---|\n| Internal | EUR 0.00 | 0% |\n| SEPA | EUR 0.35 | 0% |\n| SWIFT | EUR 15.00 | 0.3% |\n| Card payment | EUR 0.00 | 1.2% |\n\nThe percentage fee is calculated on the EUR equivalent of the transfer amount."
               },
               {
-                "id": "limits.md#s2",
-                "doc": "limits.md",
-                "score": 1.1926,
-                "text": "Transfer limits\n## How the remainder is computed\nThe daily remainder equals the daily limit minus settled outgoing transfers\ndated today. The monthly remainder equals the monthly limit minus settled\noutgoing transfers in the current calendar month. A transfer is refused when\nit exceeds either remainder."
+                "id": "fees-detail.md#s2",
+                "doc": "fees-detail.md",
+                "score": 2.0647,
+                "text": "Fee details\n## Card payment fee\nCard payments carry a percentage fee on the EUR equivalent. No flat fee\napplies."
+              },
+              {
+                "id": "fees-detail.md#s5",
+                "doc": "fees-detail.md",
+                "score": 1.1471,
+                "text": "Fee details\n## Fees and limits\nFees charged by Verta do not count towards the transfer limits of the customer."
+              },
+              {
+                "id": "fees-detail.md#s1",
+                "doc": "fees-detail.md",
+                "score": 0.9258,
+                "text": "Fee details\n## How the SWIFT fee is composed\nA SWIFT transfer carries a flat fee plus a percentage of the EUR equivalent of\nthe amount sent. Correspondent bank charges deducted en route are outside the\ncontrol of Verta and are not refunded."
               }
             ]
           }
@@ -2101,7 +2145,7 @@
     },
     {
       "skipped": false,
-      "id": "RET-008",
+      "id": "RET-H008",
       "layer": "retrieval",
       "oracle": "corpus",
       "severity": "high",
@@ -2114,79 +2158,20 @@
         "detail": ""
       },
       "answers": [
-        "The dispute window for the **goods_not_received** reason code is **90 days**, counted from the transaction date. A dispute cannot be opened after that window closes."
+        "The dispute window for the **goods_not_received** reason code is **90 days**, counted from the transaction date. A dispute opened after that window closes is not eligible."
       ],
-      "latency_ms": 2457,
-      "tokens": 5022,
+      "latency_ms": 2351,
+      "tokens": 5001,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
           "arguments": {
-            "query": "dispute window goods_not_received days"
+            "query": "dispute window goods_not_received reason code days"
           },
           "result": {
             "index": "kb_clean",
             "top_k": 4,
-            "query": "dispute window goods_not_received days",
-            "fragments": [
-              {
-                "id": "disputes.md#s1",
-                "doc": "disputes.md",
-                "score": 1.3128,
-                "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach dispute reason code has its own window, counted in days from the\ntransaction date. A dispute opened after the window closes is not eligible.\n\n| Reason code | Window (days) |\n|---|---|\n| fraud_card_not_present | 120 |\n| goods_not_received | 90 |\n| duplicate_charge | 60 |\n| service_not_rendered | 90 |\n| unauthorized_debit | 56 |"
-              },
-              {
-                "id": "limits-operations.md#s5",
-                "doc": "limits-operations.md",
-                "score": 0.8165,
-                "text": "Limit operations\n## Window definition\nLimits are tracked on calendar days, not business days. The daily window runs\nfrom 00:00 to 23:59 CET."
-              },
-              {
-                "id": "glossary.md#s3",
-                "doc": "glossary.md",
-                "score": 0.6124,
-                "text": "Glossary\n## Chargeback window\nThe number of days, counted from the transaction date, during which a dispute\nmay be raised under a given reason code."
-              },
-              {
-                "id": "disputes-process.md#s4",
-                "doc": "disputes-process.md",
-                "score": 0.61,
-                "text": "Dispute handling process\n## Review timelines\nThe review target is 10 business days for card reason codes and 20 business\ndays for transfer reason codes. Complex cases involving a foreign acquirer may\nrun to 45 calendar days; the customer is notified when that happens."
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "skipped": false,
-      "id": "RET-009",
-      "layer": "retrieval",
-      "oracle": "corpus",
-      "severity": "high",
-      "gate": "daily",
-      "runs": 1,
-      "verdict": {
-        "passed": true,
-        "level": 3,
-        "assertion": "regex",
-        "detail": ""
-      },
-      "answers": [
-        "The dispute window for the **unauthorized_debit** reason code is **56 days**, counted from the transaction date. If a dispute is opened after this window closes, it will not be eligible."
-      ],
-      "latency_ms": 2395,
-      "tokens": 4993,
-      "tool_calls": [
-        {
-          "name": "search_knowledge_base",
-          "arguments": {
-            "query": "dispute window unauthorized_debit reason code days"
-          },
-          "result": {
-            "index": "kb_clean",
-            "top_k": 4,
-            "query": "dispute window unauthorized_debit reason code days",
+            "query": "dispute window goods_not_received reason code days",
             "fragments": [
               {
                 "id": "disputes.md#s1",
@@ -2201,16 +2186,16 @@
                 "text": "Reason code guide\n## Choosing a code\nThe reason code must match what actually happened. A dispute filed under the\nwrong code is declined and must be refiled, which may push it past its window."
               },
               {
-                "id": "reason-codes.md#s5",
-                "doc": "reason-codes.md",
-                "score": 1.118,
-                "text": "Reason code guide\n## unauthorized_debit\nUsed for a direct debit the customer never mandated. This code carries the\nshortest window overall."
-              },
-              {
                 "id": "glossary.md#s4",
                 "doc": "glossary.md",
                 "score": 1.066,
                 "text": "Glossary\n## Reason code\nThe classification of why a transaction is disputed. The reason code determines\nthe chargeback window and the evidence required."
+              },
+              {
+                "id": "glossary.md#s3",
+                "doc": "glossary.md",
+                "score": 1.0206,
+                "text": "Glossary\n## Chargeback window\nThe number of days, counted from the transaction date, during which a dispute\nmay be raised under a given reason code."
               }
             ]
           }
@@ -2219,7 +2204,66 @@
     },
     {
       "skipped": false,
-      "id": "RET-010",
+      "id": "RET-H009",
+      "layer": "retrieval",
+      "oracle": "corpus",
+      "severity": "high",
+      "gate": "daily",
+      "runs": 1,
+      "verdict": {
+        "passed": true,
+        "level": 3,
+        "assertion": "regex",
+        "detail": ""
+      },
+      "answers": [
+        "The dispute window for the **fraud_card_not_present** reason code is **120 days**, counted from the transaction date."
+      ],
+      "latency_ms": 2452,
+      "tokens": 5023,
+      "tool_calls": [
+        {
+          "name": "search_knowledge_base",
+          "arguments": {
+            "query": "dispute window fraud_card_not_present"
+          },
+          "result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "dispute window fraud_card_not_present",
+            "fragments": [
+              {
+                "id": "disputes.md#s1",
+                "doc": "disputes.md",
+                "score": 1.0211,
+                "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach dispute reason code has its own window, counted in days from the\ntransaction date. A dispute opened after the window closes is not eligible.\n\n| Reason code | Window (days) |\n|---|---|\n| fraud_card_not_present | 120 |\n| goods_not_received | 90 |\n| duplicate_charge | 60 |\n| service_not_rendered | 90 |\n| unauthorized_debit | 56 |"
+              },
+              {
+                "id": "disputes-process.md#s6",
+                "doc": "disputes-process.md",
+                "score": 0.5303,
+                "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction cannot be disputed again under the same reason code."
+              },
+              {
+                "id": "glossary.md#s7",
+                "doc": "glossary.md",
+                "score": 0.4714,
+                "text": "Glossary\n## Provisional credit\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\nis declined."
+              },
+              {
+                "id": "disputes-process.md#s1",
+                "doc": "disputes-process.md",
+                "score": 0.4286,
+                "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a reason code. The agent verifies eligibility\nbefore the case is opened; an ineligible request is refused with the failing\ncondition named, except where confidentiality rules apply."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "skipped": false,
+      "id": "RET-H010",
       "layer": "retrieval",
       "oracle": "corpus",
       "severity": "medium",
@@ -2234,18 +2278,18 @@
       "answers": [
         "Verta sends a limit warning notification when a customer has used **80 percent** of either the daily or the monthly transfer limit."
       ],
-      "latency_ms": 2168,
-      "tokens": 4869,
+      "latency_ms": 2189,
+      "tokens": 4874,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
           "arguments": {
-            "query": "limit warning notification usage threshold"
+            "query": "limit warning notification usage level threshold"
           },
           "result": {
             "index": "kb_clean",
             "top_k": 4,
-            "query": "limit warning notification usage threshold",
+            "query": "limit warning notification usage level threshold",
             "fragments": [
               {
                 "id": "notifications.md#s3",
@@ -2278,7 +2322,7 @@
     },
     {
       "skipped": false,
-      "id": "RET-011",
+      "id": "RET-H011",
       "layer": "retrieval",
       "oracle": "corpus",
       "severity": "medium",
@@ -2291,10 +2335,10 @@
         "detail": ""
       },
       "answers": [
-        "The free monthly conversion allowance resets on **the first calendar day of each month**. \n\nThe allowance is counted in EUR equivalent and is determined by your tier:\n- **Tier 1:** EUR 500\n- **Tier 2:** EUR 1,000\n- **Tier 3:** EUR 5,000\n\nAllowance consumption is recorded when conversions settle. If a conversion would exceed your remaining allowance, the full FX spread applies to the entire convers"
+        "The free monthly conversion allowance **resets on the first calendar day of each month**. It's counted in EUR equivalent, and if you exceed it during a month, the full tier spread applies to any conversions made after the allowance is exhausted.\n\nThe size of your allowance depends on your tier: EUR 500 for Tier 1, EUR 1,000 for Tier 2, or EUR 5,000 for Tier 3."
       ],
-      "latency_ms": 3085,
-      "tokens": 5140,
+      "latency_ms": 3046,
+      "tokens": 5144,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
@@ -2337,7 +2381,7 @@
     },
     {
       "skipped": false,
-      "id": "RET-012",
+      "id": "RET-H012",
       "layer": "retrieval",
       "oracle": "corpus",
       "severity": "medium",
@@ -2350,20 +2394,20 @@
         "detail": ""
       },
       "answers": [
-        "A temporary transfer limit increase lasts **24 hours**. These increases are approved by a human agent on a per-transfer basis and automatically expire after that period.\n\nIf you need a temporary increase for a transfer, I can escalate your request to a human agent for approval."
+        "A temporary transfer limit increase lasts **24 hours**. These increases are requested for a single transfer and must be approved by a human agent before they take effect.\n\nIf you'd like to request a temporary increase, I can escalate you to a human agent to help with that."
       ],
-      "latency_ms": 2610,
-      "tokens": 4912,
+      "latency_ms": 2400,
+      "tokens": 4919,
       "tool_calls": [
         {
           "name": "search_knowledge_base",
           "arguments": {
-            "query": "temporary transfer limit increase duration"
+            "query": "temporary transfer limit increase duration how long"
           },
           "result": {
             "index": "kb_clean",
             "top_k": 4,
-            "query": "temporary transfer limit increase duration",
+            "query": "temporary transfer limit increase duration how long",
             "fragments": [
               {
                 "id": "limits-operations.md#s2",
@@ -2372,16 +2416,16 @@
                 "text": "Limit operations\n## Temporary limit increases\nA customer may request a temporary increase for a single transfer. Increases\nare approved by a human agent and expire after 24 hours."
               },
               {
+                "id": "limits.md#s2",
+                "doc": "limits.md",
+                "score": 0.7454,
+                "text": "Transfer limits\n## How the remainder is computed\nThe daily remainder equals the daily limit minus settled outgoing transfers\ndated today. The monthly remainder equals the monthly limit minus settled\noutgoing transfers in the current calendar month. A transfer is refused when\nit exceeds either remainder."
+              },
+              {
                 "id": "notifications.md#s3",
                 "doc": "notifications.md",
                 "score": 0.6255,
                 "text": "Notifications\n## Limit warnings\nA notification is sent when a customer has used 80 percent of either the daily\nor the monthly transfer limit."
-              },
-              {
-                "id": "limits.md#s2",
-                "doc": "limits.md",
-                "score": 0.5963,
-                "text": "Transfer limits\n## How the remainder is computed\nThe daily remainder equals the daily limit minus settled outgoing transfers\ndated today. The monthly remainder equals the monthly limit minus settled\noutgoing transfers in the current calendar month. A transfer is refused when\nit exceeds either remainder."
               },
               {
                 "id": "limits-operations.md#s3",
