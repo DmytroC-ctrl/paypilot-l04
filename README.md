@@ -2,6 +2,8 @@
 
 Звіт: [ragas-diagnostic-report.md](ragas-diagnostic-report.md). Набір: `golden.jsonl`. Сирі звіти прогонів: `reports/`.
 
+> **Перезапуск після рев'ю:** набір оновлено (`be62849f9b60`, кейси `RET-H001…H012`), прогноз до прогонів: [prediction.md](prediction.md). Нижче й у звіті поки що описано попередній набір `888d99d2df92`; оновлюється після прогонів.
+
 ## Репозиторій ДЗ_2
 
 ДЗ_2 зроблено в клоні кіта L03: `paypilot-l03-eval` (локально `~/paypilot/paypilot-l03-eval`, коміти `HW2: …`, останній `c0d2e63`; копія результатів у `~/paypilot/hw2-final/`).
